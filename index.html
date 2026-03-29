@@ -1,75 +1,124 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Ayawaska Banda</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ayawaska Banda</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: white;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  scroll-behavior: smooth;
+}
 
-    header {
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
-      url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2');
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
+/* HEADER */
+header {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+  url('jub.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 
-    h1 {
-      font-size: 3.5em;
-      margin: 0;
-    }
+h1 {
+  font-size: 4em;
+  margin: 0;
+}
 
-    p {
-      font-size: 1.2em;
-    }
+.btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #25D366;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
 
-    .btn {
-      margin-top: 20px;
-      padding: 12px 25px;
-      background: #25D366;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1em;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
+/* SECCIONES */
+.section {
+  padding: 60px 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.6s;
+}
 
-    .section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-    }
+/* GALERIA */
+.gallery img {
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
 
-    img {
-      margin: 10px;
-      border-radius: 10px;
-    }
+.gallery img:hover {
+  transform: scale(1.05);
+}
 
-    footer {
-      background: #020617;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
+/* VIDEO */
+.video iframe {
+  width: 90%;
+  max-width: 600px;
+  height: 340px;
+  border-radius: 10px;
+}
 
-  </style>
+/* FORM */
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  background: #3b82f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  background: #020617;
+  padding: 20px;
+  text-align: center;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+}
+</style>
 </head>
 
 <body>
@@ -77,41 +126,55 @@
 <header>
   <div>
     <h1>Ayawaska Banda 🎸</h1>
-    <p>La mejor experiencia musical en vivo para tus eventos 🎶</p>
-
+    <p>Rock • Cultura • Energía en vivo</p>
     <a class="btn" href="https://wa.me/593989427123" target="_blank">
-      📲 Contrátanos por WhatsApp
+      📲 Contratar ahora
     </a>
   </div>
 </header>
 
 <section class="section">
   <h2>Sobre Nosotros</h2>
+  <p>Banda ecuatoriana que fusiona cultura amazónica con rock moderno.</p>
+</section>
+
+<section class="section gallery">
+  <h2>Galería</h2>
+  <img src="19244085_1338686362895204_1801167_n.png">
+  <img src="19244128_1338688802894960_1736599792_n.png">
+  <img src="19250084_1338691862894654_43773905_o.png">
+</section>
+
+<section class="section video">
+  <h2>Video</h2>
+  <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=ayawaskabanda" allowfullscreen></iframe>
+</section>
+
+<section class="section">
+  <h2>Escúchanos</h2>
   <p>
-    Somos Ayawaska Banda, llevando la mejor música en vivo para eventos,
-    fiestas y conciertos. Energía, pasión y espectáculo en cada presentación.
+    <a href="https://open.spotify.com/intl-es/artist/4h89ErG9gxVslnJPWrzsLD" target="_blank">🎵 Spotify</a>
   </p>
 </section>
 
 <section class="section">
-  <h2>Servicios</h2>
-  <p>✔ Eventos privados</p>
-  <p>✔ Fiestas</p>
-  <p>✔ Conciertos en vivo</p>
-</section>
+  <h2>Contacto</h2>
 
-<section class="section">
-  <h2>Galería</h2>
-  <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d" width="250">
-  <img src="https://images.unsplash.com/photo-1506157786151-b8491531f063" width="250">
+  <form onsubmit="enviarWhatsApp(event)">
+    <input type="text" id="nombre" placeholder="Tu nombre" required>
+    <input type="email" id="email" placeholder="Tu email" required>
+    <textarea id="mensaje" placeholder="Mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
 </section>
 
 <section class="section">
   <h2>Síguenos</h2>
   <p>
-    <a href="#" style="color:#3b82f6;">Facebook</a> |
-    <a href="#" style="color:#e1306c;">Instagram</a> |
-    <a href="#" style="color:#ff0000;">YouTube</a>
+    <a href="https://www.facebook.com/profile.php?id=100047173088753" target="_blank">Facebook</a> |
+    <a href="https://www.instagram.com/ayawaskabanda" target="_blank">Instagram</a> |
+    <a href="https://www.youtube.com/@ayawaskabanda" target="_blank">YouTube</a>
   </p>
 </section>
 
@@ -119,22 +182,38 @@
   <p>© 2026 Ayawaska Banda</p>
 </footer>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
-<a href="https://wa.me/593989427123" target="_blank" 
-style="
-position: fixed;
-bottom: 20px;
-right: 20px;
-background: #25D366;
-color: white;
-padding: 15px;
-border-radius: 50%;
-font-size: 20px;
-text-decoration: none;
-box-shadow: 0 0 10px rgba(0,0,0,0.3);
-">
+<!-- BOTÓN WHATSAPP -->
+<a href="https://wa.me/593989427123" target="_blank" class="whatsapp">
 💬
 </a>
+
+<script>
+// ANIMACIONES AL HACER SCROLL
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('visible');
+    }
+  });
+});
+
+// FORMULARIO → WHATSAPP
+function enviarWhatsApp(e) {
+  e.preventDefault();
+
+  let nombre = document.getElementById("nombre").value;
+  let email = document.getElementById("email").value;
+  let mensaje = document.getElementById("mensaje").value;
+
+  let texto = `Hola, soy ${nombre}%0AEmail: ${email}%0AMensaje: ${mensaje}`;
+  let url = "https://wa.me/593989427123?text=" + texto;
+
+  window.open(url, "_blank");
+}
+</script>
 
 </body>
 </html>
