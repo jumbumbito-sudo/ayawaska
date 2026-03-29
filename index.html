@@ -2,23 +2,31 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Mi Primera Web</title>
+  <title>Ayawaska Banda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       background: #0f172a;
       color: white;
     }
 
     header {
-      background: linear-gradient(135deg, #3b82f6, #06b6d4);
-      padding: 60px 20px;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+                  url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 3.5em;
       margin: 0;
     }
 
@@ -29,17 +37,23 @@
     .btn {
       margin-top: 20px;
       padding: 12px 25px;
-      background: white;
-      color: black;
+      background: #25D366;
+      color: white;
       border: none;
-      cursor: pointer;
-      font-size: 1em;
       border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      text-decoration: none;
     }
 
     .section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
     }
 
     footer {
@@ -48,35 +62,41 @@
       text-align: center;
       font-size: 0.9em;
     }
+
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Mi Web 🚀</h1>
-    <p>Ya estoy en internet con GitHub Pages</p>
-    <button class="btn" onclick="saludar()">Haz clic</button>
-  </header>
+<header>
+  <div>
+    <h1>Ayawaska Banda 🎸</h1>
+    <p>Música en vivo • Eventos • Shows</p>
 
-  <div class="section">
-    <h2>Sobre mí</h2>
-    <p>Esta es mi primera página web hecha desde cero.</p>
+    <a class="btn" href="https://wa.me/593989427123" target="_blank">
+      📲 Contrátanos por WhatsApp
+    </a>
   </div>
+</header>
 
-  <div class="section">
-    <h2>Servicios</h2>
-    <p>Pronto agregaré más contenido aquí.</p>
-  </div>
+<section class="section">
+  <h2>Sobre Nosotros</h2>
+  <p>
+    Somos Ayawaska Banda, llevando la mejor música en vivo para tus eventos,
+    fiestas y conciertos. Energía, pasión y espectáculo en cada presentación.
+  </p>
+</section>
 
-  <footer>
-    <p>© 2026 Mi Web</p>
-  </footer>
+<section class="section">
+  <h2>Servicios</h2>
+  <p>✔ Eventos privados</p>
+  <p>✔ Fiestas</p>
+  <p>✔ Conciertos en vivo</p>
+</section>
 
-  <script>
-    function saludar() {
-      alert("Hola! Bienvenido a mi web 😎");
-    }
-  </script>
+<footer>
+  <p>© 2026 Ayawaska Banda</p>
+</footer>
 
 </body>
 </html>
