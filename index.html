@@ -130,6 +130,7 @@ header::after {
   border-radius: 8px;
   text-decoration: none;
   font-size: 1.2em;
+  font-weight: bold;
   transition: 0.3s;
   animation: fadeIn 2s ease forwards;
   cursor: pointer;
@@ -163,7 +164,7 @@ header::after {
   opacity: 0.9;
 }
 
-/* ROTADOR DE GALERÍA (NUEVO) */
+/* ROTADOR DE GALERÍA */
 .slider {
   display: block;
   width: 90%;
@@ -312,7 +313,7 @@ footer {
 
 @media (max-width: 768px) {
   .slider {
-    height: 300px; /* Mas bajito en móbiles */
+    height: 300px; 
   }
 }
 
@@ -349,7 +350,7 @@ footer {
   <span class="slider-instruccion">👆 Toca la imagen para ver el álbum completo</span>
   
   <a href="galeria.html" class="slider">
-    <!-- Esta imagen cambiará cada 3 segundos -->
+    <!-- Esta imagen cambiará cada vez -->
     <img id="slider-img" src="19244085_1338686362895204_1801167_n.png" alt="Ayawaska Galería">
   </a>
 </section>
@@ -361,7 +362,7 @@ footer {
 
 <!-- SECCIÓN BOTÓN RECURSOS -->
 <div style="text-align: center; padding: 40px 20px 80px 20px;">
-  <button id="openRecursos" class="btn" style="background: white; color: black; font-weight: bold;">
+  <button id="openRecursos" class="btn">
     📂 Recursos Prensa / Promotores
   </button>
 </div>
@@ -437,13 +438,13 @@ const imgRotativa = document.getElementById("slider-img");
 
 if(imgRotativa) {
   setInterval(() => {
-    imgRotativa.style.opacity = 0; // Se desvanece
+    imgRotativa.style.opacity = 0; 
     setTimeout(() => {
       indiceActual = (indiceActual + 1) % arrayFotos.length;
       imgRotativa.src = arrayFotos[indiceActual];
-      imgRotativa.style.opacity = 1; // Aparece suavemente la nueva
-    }, 500); // Tarda medio segundo apagada
-  }, 3500); // Cambia cada 3.5 segundos
+      imgRotativa.style.opacity = 1; 
+    }, 500); 
+  }, 3500); 
 }
 </script>
 
