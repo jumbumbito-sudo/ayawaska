@@ -52,14 +52,18 @@ body::before {
   animation: fadeIn 2s ease forwards;
 }
 
-/* HEADER */
+/* HEADER Y UBICACIÓN DEL BOTÓN */
 header {
   height: 100vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; /* Distribuye el logo al centro y botón abajo */
   text-align: center;
+  padding-top: 80px; 
+  padding-bottom: 60px; /* Separación del botón con el borde inferior */
+  box-sizing: border-box;
 }
 
 header::before {
@@ -67,6 +71,8 @@ header::before {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background: url('banda.png') center/cover no-repeat;
   z-index: -2;
 }
@@ -76,6 +82,8 @@ header::after {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
   background: linear-gradient(
     to bottom,
     rgba(0,255,200,0.4),
@@ -84,21 +92,36 @@ header::after {
   z-index: -1;
 }
 
-header img {
+.header-center {
+  flex-grow: 1; /* Ocupa el espacio del medio para empujar el botón */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-center img {
   width: 300px;
   animation: fadeIn 1.5s ease;
 }
 
+.header-center p {
+  font-size: 1.2em;
+  margin-top: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
 /* BOTÓN */
 .btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: black;
+  padding: 15px 30px;
+  background: rgba(0,0,0,0.6);
   color: white;
   border: 2px solid white;
   border-radius: 8px;
   text-decoration: none;
+  font-size: 1.2em;
   transition: 0.3s;
+  animation: fadeIn 2s ease forwards;
 }
 
 .btn:hover {
@@ -150,30 +173,6 @@ header img {
   border-radius: 10px;
 }
 
-/* FORM */
-form {
-  max-width: 400px;
-  margin: auto;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: none;
-  border-radius: 8px;
-}
-
-button {
-  background: #3b82f6;
-  color: white;
-  padding: 10px;
-  border: none;
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
 /* FOOTER */
 footer {
   background: rgba(0,0,0,0.8);
@@ -194,6 +193,7 @@ footer {
   color: white;
   border: 2px solid white;
   transition: 0.3s;
+  z-index: 1000; /* Para asegurar que siempre esté arríba */
 }
 
 .whatsapp:hover {
@@ -227,17 +227,20 @@ footer {
 
 <!-- SPLASH -->
 <div id="splash">
-  <img src="logo.png" alt="Logo Ayawaska">
+  <img src="logo-01.png" alt="Logo Ayawaska">
 </div>
 
 <header>
-  <div>
+  <!-- Este contenedor mantiene centrado el logo -->
+  <div class="header-center">
     <img src="logo-01.png" alt="Ayawaska">
     <p>Rock • Cultura • Energía en vivo</p>
-    <a class="btn" href="https://wa.me/593989427123" target="_blank">
-      📲 Contratar ahora
-    </a>
   </div>
+  
+  <!-- El botón queda al ras abajo de la portada -->
+  <a class="btn" href="https://wa.me/593989427123" target="_blank">
+    📲 Contratar ahora
+  </a>
 </header>
 
 <section class="section">
@@ -252,10 +255,10 @@ footer {
 
   <img src="19244085_1338686362895204_1801167_n.png">
   <img src="19244128_1338688802894960_1736599792_n.png">
-  <img src="19251290_1338686356228538_208430174_n.png">
+  <img src="19251290_1338686356228538_2084330174_n.png">
   <img src="19389883_1338690676228106_1191935368_n.png">
-  <img src="19398590_133869995618507_9916779185_n.png">
-  <img src="19401310_1338690896228084_181350141_o.png">
+  <img src="19398590_1338686999561807_991679185_n.png">
+  <img src="19401310_1338690896228084_1813530141_o.png">
 
 </section>
 
