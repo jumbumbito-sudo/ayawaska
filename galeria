@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Galería Completa - Ayawaska</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  @font-face {
+    font-family: 'Brux';
+    src: url('BRUX-Regular.otf') format('opentype');
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Brux', Arial;
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  header {
+    background: linear-gradient(to bottom, #111, black);
+    padding: 40px 20px;
+    border-bottom: 2px solid #333;
+  }
+
+  h1 { font-size: 2.5em; margin: 0; }
+
+  .back-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 25px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  .back-btn:hover { background: #ccc; }
+
+  .grid-galeria {
+    display: grid;
+    /* Se adapta y pone columnas fluidas */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-galeria img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: 0.3s;
+    border: 1px solid #333;
+  }
+
+  .grid-galeria img:hover {
+    transform: scale(1.05);
+    border-color: white;
+    box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    z-index: 10;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Álbum de Ayawaska</h1>
+  <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
+</header>
+
+<div class="grid-galeria">
+  <img src="19244085_1338686362895204_1801167_n.png" loading="lazy">
+  <img src="19244128_1338688802894960_1736599792_n.png" loading="lazy">
+  <img src="19251290_1338686356228538_2084330174_n.png" loading="lazy">
+  <img src="19389883_1338690676228106_1191935368_n.png" loading="lazy">
+  <img src="19398590_1338686999561807_991679185_n.png" loading="lazy">
+  <img src="19401310_1338690896228084_1813530141_o.png" loading="lazy">
+  <!-- Nuevas agregadas -->
+  <img src="_DSC0131.jpg" loading="lazy">
+  <img src="_DSC9850.jpg" loading="lazy">
+  <img src="_DSC9871.jpg" loading="lazy">
+  <img src="_DSC9895.jpg" loading="lazy">
+  <img src="19244420_1338686589561848_1494740831_n.jpg" loading="lazy">
+  <img src="19389431_1338686146228559_1377203761_n.jpg" loading="lazy">
+  <img src="19401286_1338683636228810_1194118554_o.jpg" loading="lazy">
+</div>
+
+</body>
+</html>
