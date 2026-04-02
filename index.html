@@ -362,7 +362,7 @@ footer {
 
 <!-- SECCIÓN BOTÓN RECURSOS -->
 <div style="text-align: center; padding: 40px 20px 80px 20px;">
-  <button id="openRecursos" class="btn">
+  <button id="openRecursos" class="btn" style="background: black !important; color: white !important; border-color: white !important;">
     📂 Recursos Prensa / Promotores
   </button>
 </div>
@@ -375,11 +375,12 @@ footer {
     <p style="margin-bottom: 20px;">Material oficial y requerimientos técnicos de la banda.</p>
     
     <div class="recursos-links">
-      <a href="Rider_Ayawaska.pdf" target="_blank" download class="btn-descarga">🎤 Descargar Rider Técnico</a>
-      <a href="Stage_Plot_Ayawaska.pdf" target="_blank" download class="btn-descarga">🎸 Descargar Stage Plot</a>
-      <a href="EPK_Ayawaska.pdf" target="_blank" download class="btn-descarga">📄 Descargar EPK</a>
+      <!-- Estos enlaces están ajustados EXACTAMENTE a como los tienes en GitHub -->
+      <a href="Rider Ayawaska.pdf" target="_blank" download class="btn-descarga">🎤 Descargar Rider Técnico</a>
+      <a href="Stage Plot.png" target="_blank" download class="btn-descarga">🎸 Descargar Stage Plot</a>
+      <a href="EPK.pdf" target="_blank" download class="btn-descarga">📄 Descargar EPK</a>
       <a href="logo-01.png" target="_blank" download class="btn-descarga">🖼️ Descargar Logo Oficial PNG</a>
-      <a href="logo-01.ai" target="_blank" download class="btn-descarga">📐 Descargar Logo Vector (.ai)</a>
+      <a href="Logo vector.ai" target="_blank" download class="btn-descarga">📐 Descargar Logo Vector (.ai)</a>
     </div>
   </div>
 </div>
@@ -416,21 +417,22 @@ document.getElementById("openRecursos").addEventListener("click", () => modal.st
 document.querySelector(".close-modal").addEventListener("click", () => modal.style.display = "none");
 window.addEventListener("click", (e) => { if (e.target == modal) modal.style.display = "none"; });
 
-// SCRIPT PARA EL ROTADOR DE FOTOS
+// SCRIPT PARA EL ROTADOR DE FOTOS (Incluye TODAS tus fotos subidas)
 const arrayFotos = [
   "19244085_1338686362895204_1801167_n.png",
   "19244128_1338688802894960_1736599792_n.png",
+  "19244420_1338686589561848_1494740831_n.jpg",
+  "19250084_1338691862894654_43773905_o.png",
   "19251290_1338686356228538_2084330174_n.png",
+  "19389431_1338686146228559_1377203761_n.jpg",
   "19389883_1338690676228106_1191935368_n.png",
   "19398590_1338686999561807_991679185_n.png",
+  "19401286_1338683636228810_1194118554_o.jpg",
   "19401310_1338690896228084_1813530141_o.png",
   "_DSC0131.jpg",
   "_DSC9850.jpg",
   "_DSC9871.jpg",
-  "_DSC9895.jpg",
-  "19244420_1338686589561848_1494740831_n.jpg",
-  "19389431_1338686146228559_1377203761_n.jpg",
-  "19401286_1338683636228810_1194118554_o.jpg"
+  "_DSC9895.jpg"
 ];
 
 let indiceActual = 0;
