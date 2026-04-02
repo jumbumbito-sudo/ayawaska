@@ -66,6 +66,7 @@ header {
   box-sizing: border-box;
 }
 
+/* FOTO DE PORTADA */
 header::before {
   content: "";
   position: absolute;
@@ -90,6 +91,16 @@ header::after {
     rgba(0,0,0,0.95)
   );
   z-index: -1;
+}
+
+/* ADAPTACIÓN DE PORTADA PARA CELULARES */
+@media (max-width: 768px) {
+  header::before {
+    /* Muestra la imagen completa sin recortar en movil */
+    background-size: contain; 
+    background-position: top center;
+    background-color: black;
+  }
 }
 
 .header-center {
@@ -159,6 +170,7 @@ header::after {
   margin: 10px;
   border-radius: 10px;
   transition: 0.3s;
+  object-fit: cover;
 }
 
 .gallery img:hover {
@@ -331,7 +343,7 @@ footer {
   <iframe src="https://www.youtube.com/embed/LX0XGf-w0Ic" allowfullscreen></iframe>
 </section>
 
-<!-- SECCIÓN BOTÓN RECURSOS (Sin animación para que siempre se vea) -->
+<!-- SECCIÓN BOTÓN RECURSOS -->
 <div style="text-align: center; padding: 40px 20px 80px 20px;">
   <button id="openRecursos" class="btn" style="background: white; color: black; font-weight: bold;">
     📂 Recursos Prensa / Promotores
@@ -346,11 +358,11 @@ footer {
     <p style="margin-bottom: 20px;">Material oficial y requerimientos técnicos de la banda.</p>
     
     <div class="recursos-links">
-      <!-- Asegúrate que los archivos estén en tu carpeta con estos nombres exactos -->
+      <!-- Ahora busca logo-01.ai, asegúrate de que el archivo se llame así -->
       <a href="Rider_Ayawaska.pdf" target="_blank" download class="btn-descarga">🎤 Descargar Rider Técnico</a>
       <a href="EPK_Ayawaska.pdf" target="_blank" download class="btn-descarga">📄 Descargar EPK</a>
       <a href="logo-01.png" target="_blank" download class="btn-descarga">🖼️ Descargar Logo Oficial PNG</a>
-      <a href="Logo_Vector.ai" target="_blank" download class="btn-descarga">📐 Descargar Logo Vector</a>
+      <a href="logo-01.ai" target="_blank" download class="btn-descarga">📐 Descargar Logo Vector (.ai)</a>
     </div>
   </div>
 </div>
