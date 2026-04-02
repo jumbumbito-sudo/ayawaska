@@ -96,7 +96,6 @@ header::after {
 /* ADAPTACIÓN DE PORTADA PARA CELULARES */
 @media (max-width: 768px) {
   header::before {
-    /* Muestra la imagen completa sin recortar en movil */
     background-size: contain; 
     background-position: top center;
     background-color: black;
@@ -164,17 +163,38 @@ header::after {
   opacity: 0.9;
 }
 
-/* GALERÍA */
-.gallery img {
-  width: 250px;
-  margin: 10px;
-  border-radius: 10px;
+/* ROTADOR DE GALERÍA (NUEVO) */
+.slider {
+  display: block;
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.8);
+  cursor: pointer;
   transition: 0.3s;
-  object-fit: cover;
+  border: 2px solid white;
 }
 
-.gallery img:hover {
-  transform: scale(1.05);
+.slider:hover {
+  transform: scale(1.03);
+}
+
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slider-instruccion {
+  display: block;
+  margin-bottom: 20px;
+  font-family: Arial;
+  font-style: italic;
+  opacity: 0.8;
 }
 
 /* VIDEO */
@@ -213,9 +233,7 @@ footer {
   color: black;
 }
 
-/* =========================================
-   VENTANA EMERGENTE (MODAL) RECURSOS 
-   ========================================= */
+/* VENTANA EMERGENTE (MODAL) RECURSOS */
 .modal {
   display: none;
   position: fixed;
@@ -281,10 +299,7 @@ footer {
 
 /* ANIMACIONES */
 @keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: scale(1.05);
-  }
+  to { opacity: 1; transform: scale(1.05); }
 }
 
 .fade-out {
@@ -292,9 +307,12 @@ footer {
 }
 
 @keyframes fadeOut {
-  to {
-    opacity: 0;
-    visibility: hidden;
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    height: 300px; /* Mas bajito en móbiles */
   }
 }
 
@@ -309,13 +327,10 @@ footer {
 </div>
 
 <header>
-  <!-- Este contenedor mantiene centrado el logo -->
   <div class="header-center">
     <img src="logo-01.png" alt="Ayawaska">
     <p>Rock • Cultura • Energía en vivo</p>
   </div>
-  
-  <!-- El botón queda al ras abajo de la portada -->
   <a class="btn" href="https://wa.me/593989427123" target="_blank">
     📲 Contratar ahora
   </a>
@@ -328,14 +343,15 @@ footer {
   </p>
 </section>
 
+<!-- GALERÍA ANIMADA ROTATIVA -->
 <section class="section gallery">
   <h2>Galería</h2>
-  <img src="19244085_1338686362895204_1801167_n.png">
-  <img src="19244128_1338688802894960_1736599792_n.png">
-  <img src="19251290_1338686356228538_2084330174_n.png">
-  <img src="19389883_1338690676228106_1191935368_n.png">
-  <img src="19398590_1338686999561807_991679185_n.png">
-  <img src="19401310_1338690896228084_1813530141_o.png">
+  <span class="slider-instruccion">👆 Toca la imagen para ver el álbum completo</span>
+  
+  <a href="galeria.html" class="slider">
+    <!-- Esta imagen cambiará cada 3 segundos -->
+    <img id="slider-img" src="19244085_1338686362895204_1801167_n.png" alt="Ayawaska Galería">
+  </a>
 </section>
 
 <section class="section video">
@@ -343,7 +359,7 @@ footer {
   <iframe src="https://www.youtube.com/embed/LX0XGf-w0Ic" allowfullscreen></iframe>
 </section>
 
-<!-- SECCIÓN BOTÓN RECURSOS (Sin animación para que siempre se vea) -->
+<!-- SECCIÓN BOTÓN RECURSOS -->
 <div style="text-align: center; padding: 40px 20px 80px 20px;">
   <button id="openRecursos" class="btn" style="background: white; color: black; font-weight: bold;">
     📂 Recursos Prensa / Promotores
@@ -358,7 +374,6 @@ footer {
     <p style="margin-bottom: 20px;">Material oficial y requerimientos técnicos de la banda.</p>
     
     <div class="recursos-links">
-      <!-- Asegúrate que los archivos estén en tu carpeta con estos nombres exactos -->
       <a href="Rider_Ayawaska.pdf" target="_blank" download class="btn-descarga">🎤 Descargar Rider Técnico</a>
       <a href="Stage_Plot_Ayawaska.pdf" target="_blank" download class="btn-descarga">🎸 Descargar Stage Plot</a>
       <a href="EPK_Ayawaska.pdf" target="_blank" download class="btn-descarga">📄 Descargar EPK</a>
@@ -379,53 +394,57 @@ footer {
 <script>
 // Splash Screen
 window.addEventListener("load", () => {
-  setTimeout(() => {
-    document.getElementById("splash").classList.add("fade-out");
-  }, 2500);
-  
-  // Refuerzo extra de visibilidad al cargar
+  setTimeout(() => document.getElementById("splash").classList.add("fade-out"), 2500);
   setTimeout(() => {
     document.querySelectorAll('.section').forEach(sec => {
-      const top = sec.getBoundingClientRect().top;
-      if(top < window.innerHeight){
-        sec.classList.add('visible');
-      }
+      if(sec.getBoundingClientRect().top < window.innerHeight) sec.classList.add('visible');
     });
   }, 2600);
 });
 
 // Scroll Animation
-const sections = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
-  sections.forEach(sec => {
-    const top = sec.getBoundingClientRect().top;
-    if(top < window.innerHeight - 100){
-      sec.classList.add('visible');
-    }
+  document.querySelectorAll('.section').forEach(sec => {
+    if(sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('visible');
   });
 });
 
-// Lógica para el Modal de Recursos
+// Modal Recursos
 const modal = document.getElementById("modalRecursos");
-const btnOpen = document.getElementById("openRecursos");
-const spanClose = document.querySelector(".close-modal");
+document.getElementById("openRecursos").addEventListener("click", () => modal.style.display = "flex");
+document.querySelector(".close-modal").addEventListener("click", () => modal.style.display = "none");
+window.addEventListener("click", (e) => { if (e.target == modal) modal.style.display = "none"; });
 
-// Abrir Modal
-btnOpen.addEventListener("click", () => {
-  modal.style.display = "flex";
-});
+// SCRIPT PARA EL ROTADOR DE FOTOS
+const arrayFotos = [
+  "19244085_1338686362895204_1801167_n.png",
+  "19244128_1338688802894960_1736599792_n.png",
+  "19251290_1338686356228538_2084330174_n.png",
+  "19389883_1338690676228106_1191935368_n.png",
+  "19398590_1338686999561807_991679185_n.png",
+  "19401310_1338690896228084_1813530141_o.png",
+  "_DSC0131.jpg",
+  "_DSC9850.jpg",
+  "_DSC9871.jpg",
+  "_DSC9895.jpg",
+  "19244420_1338686589561848_1494740831_n.jpg",
+  "19389431_1338686146228559_1377203761_n.jpg",
+  "19401286_1338683636228810_1194118554_o.jpg"
+];
 
-// Cerrar Modal con la 'X'
-spanClose.addEventListener("click", () => {
-  modal.style.display = "none";
-});
+let indiceActual = 0;
+const imgRotativa = document.getElementById("slider-img");
 
-// Cerrar Modal al hacer clic afuera
-window.addEventListener("click", (event) => {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-});
+if(imgRotativa) {
+  setInterval(() => {
+    imgRotativa.style.opacity = 0; // Se desvanece
+    setTimeout(() => {
+      indiceActual = (indiceActual + 1) % arrayFotos.length;
+      imgRotativa.src = arrayFotos[indiceActual];
+      imgRotativa.style.opacity = 1; // Aparece suavemente la nueva
+    }, 500); // Tarda medio segundo apagada
+  }, 3500); // Cambia cada 3.5 segundos
+}
 </script>
 
 </body>
