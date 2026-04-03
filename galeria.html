@@ -4,6 +4,10 @@
 <meta charset="UTF-8">
 <title>Galería Completa - Ayawaska</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ICONOS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
   @font-face {
     font-family: 'Brux';
@@ -41,6 +45,24 @@
 
   .back-btn:hover { background: #ccc; }
 
+  .download-btn {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 10px 25px;
+    background: #ffcc00;
+    color: black;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: 0.3s;
+  }
+
+  .download-btn:hover {
+    background: #ffaa00;
+  }
+
   .grid-galeria {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -64,26 +86,85 @@
     box-shadow: 0 5px 15px rgba(255,255,255,0.2);
     z-index: 10;
   }
+
+  /* REDES SOCIALES */
+  .social-section {
+    padding: 50px 20px;
+    border-top: 1px solid #333;
+  }
+
+  .social-section h2 {
+    margin-bottom: 20px;
+  }
+
+  .social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px;
+    padding: 12px 22px;
+    background: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+    font-family: Arial, sans-serif;
+  }
+
+  .social-links a i {
+    font-size: 18px;
+  }
+
+  .social-links a:hover {
+    background: #ccc;
+    transform: scale(1.05);
+  }
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>Álbum de Ayawaska</h1>
+
   <a href="index.html" class="back-btn">⬅ Volver al Inicio</a>
+
+  <a href="stageplot.pdf" download class="download-btn">
+    📄 Descargar Stage Plot
+  </a>
 </header>
 
 <div class="grid-galeria">
-  <img src="19244085_1338686362895204_1801167_n.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19244128_1338688802894960_1736599792_n.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19244420_1338686589561848_1494740831_n.jpg" loading="lazy" alt="Ayawaska Foto">
-  <img src="19250084_1338691862894654_43773905_o.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19251290_1338686356228538_2084330174_n.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19389431_1338686146228559_1377203761_n.jpg" loading="lazy" alt="Ayawaska Foto">
-  <img src="19389883_1338690676228106_1191935368_n.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19398590_1338686999561807_991679185_n.png" loading="lazy" alt="Ayawaska Foto">
-  <img src="19401286_1338683636228810_1194118554_o.jpg" loading="lazy" alt="Ayawaska Foto">
-  <img src="19401310_1338690896228084_1813530141_o.png" loading="lazy" alt="Ayawaska Foto">
+  <img src="19244085_1338686362895204_1801167_n.png" loading="lazy">
+  <img src="19244128_1338688802894960_1736599792_n.png" loading="lazy">
+  <img src="19244420_1338686589561848_1494740831_n.jpg" loading="lazy">
+  <img src="19250084_1338691862894654_43773905_o.png" loading="lazy">
+  <img src="19251290_1338686356228538_2084330174_n.png" loading="lazy">
+  <img src="19389431_1338686146228559_1377203761_n.jpg" loading="lazy">
+  <img src="19389883_1338690676228106_1191935368_n.png" loading="lazy">
+  <img src="19398590_1338686999561807_991679185_n.png" loading="lazy">
+  <img src="19401286_1338683636228810_1194118554_o.jpg" loading="lazy">
+  <img src="19401310_1338690896228084_1813530141_o.png" loading="lazy">
+</div>
+
+<!-- REDES SOCIALES -->
+<div class="social-section">
+  <h2>Síguenos</h2>
+
+  <div class="social-links">
+    <a href="https://www.youtube.com/@ayawaskabanda" target="_blank">
+      <i class="fab fa-youtube"></i> YouTube
+    </a>
+
+    <a href="https://www.instagram.com/ayawaskabanda" target="_blank">
+      <i class="fab fa-instagram"></i> Instagram
+    </a>
+
+    <a href="https://open.spotify.com/intl-es/artist/4h89ErG9gxVslnJPWrzsLD" target="_blank">
+      <i class="fab fa-spotify"></i> Spotify
+    </a>
+  </div>
 </div>
 
 </body>
