@@ -106,6 +106,16 @@ header img {
   color: black;
 }
 
+/* BOTÓN HEADER ESPECÍFICO */
+.btn-header {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0;
+  white-space: nowrap;
+}
+
 /* SECCIONES */
 .section {
   padding: 80px 20px;
@@ -282,12 +292,6 @@ footer {
   border-color: #00ffc8;
 }
 
-.res-btn:hover {
-  background: white;
-  color: black;
-  border-color: #00ffc8;
-}
-
 /* CAROUSEL STYLES */
 .gallery-slideshow {
   position: relative;
@@ -315,6 +319,31 @@ footer {
   opacity: 1;
 }
 
+/* ADAPTACIÓN PARA MÓVILES */
+@media (max-width: 768px) {
+  header {
+    height: 60vh; /* Altura ajustada para que la foto no sea gigante en móvil */
+  }
+  header::before {
+    background-size: contain; /* Asegura que la foto de la banda se vea completa */
+    background-position: center;
+  }
+  header img {
+    width: 200px; /* Logo más pequeño en móvil */
+  }
+  .btn-header {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    display: inline-block;
+    margin-top: 30px !important;
+  }
+  .gallery-slideshow {
+    height: 250px; /* Carrusel más proporcional en móvil */
+  }
+}
+
 </style>
 </head>
 
@@ -330,7 +359,7 @@ footer {
     <img src="logo-01.png" alt="Ayawaska">
     <p>Rock • Cultura • Energía en vivo</p>
     
-    <a class="btn" href="https://wa.me/593989427123" target="_blank" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); margin-top: 0; white-space: nowrap;">
+    <a class="btn btn-header" href="https://wa.me/593989427123" target="_blank">
       📲 Contratar ahora
     </a>
   </div>
@@ -344,7 +373,7 @@ footer {
 </section>
 
 <section class="section" style="padding-bottom: 0;">
-  <h2>Síguenos</h2>
+  <h2>Síiguenos</h2>
   <div class="social-links" style="margin: 20px 0; display: flex; justify-content: center; gap: 30px; align-items: center;">
       <a href="https://www.facebook.com/p/AYAWASKA-100047173088753/?locale=es_LA" target="_blank" style="transition: transform 0.3s; display: inline-block;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
         <img src="fb.png" alt="Facebook" style="width: 50px; height: 50px; object-fit: contain; filter: drop-shadow(0 0 15px rgba(0,0,0,0.8));">
