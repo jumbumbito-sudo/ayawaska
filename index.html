@@ -52,28 +52,21 @@ body::before {
   animation: fadeIn 2s ease forwards;
 }
 
-/* HEADER Y UBICACIÓN DEL BOTÓN */
+/* HEADER */
 header {
   height: 100vh;
   position: relative;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: space-between; 
+  justify-content: center;
   text-align: center;
-  padding-top: 80px; 
-  padding-bottom: 60px; 
-  box-sizing: border-box;
 }
 
-/* FOTO DE PORTADA */
 header::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   background: url('banda.png') center/cover no-repeat;
   z-index: -2;
 }
@@ -83,8 +76,6 @@ header::after {
   position: absolute;
   width: 100%;
   height: 100%;
-  top: 0;
-  left: 0;
   background: linear-gradient(
     to bottom,
     rgba(0,255,200,0.4),
@@ -93,47 +84,21 @@ header::after {
   z-index: -1;
 }
 
-/* ADAPTACIÓN DE PORTADA PARA CELULARES */
-@media (max-width: 768px) {
-  header::before {
-    background-size: contain; 
-    background-position: top center;
-    background-color: black;
-  }
-}
-
-.header-center {
-  flex-grow: 1; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-center img {
+header img {
   width: 300px;
   animation: fadeIn 1.5s ease;
 }
 
-.header-center p {
-  font-size: 1.2em;
-  margin-top: 15px;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-}
-
-/* BOTONES GLOBALES */
+/* BOTÓN */
 .btn {
-  padding: 15px 30px;
-  background: rgba(0,0,0,0.6);
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: black;
   color: white;
   border: 2px solid white;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 1.2em;
-  font-weight: bold;
   transition: 0.3s;
-  animation: fadeIn 2s ease forwards;
-  cursor: pointer;
 }
 
 .btn:hover {
@@ -141,7 +106,7 @@ header::after {
   color: black;
 }
 
-/* SECCIONES PARA ANIMACIÓN */
+/* SECCIONES */
 .section {
   padding: 80px 20px;
   text-align: center;
@@ -155,6 +120,7 @@ header::after {
   transform: translateY(0);
 }
 
+/* TEXTO MEJORADO */
 .section p {
   max-width: 700px;
   margin: 20px auto;
@@ -164,38 +130,16 @@ header::after {
   opacity: 0.9;
 }
 
-/* ROTADOR DE GALERÍA */
-.slider {
-  display: block;
-  width: 90%;
-  max-width: 600px;
-  height: 400px;
-  margin: auto;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.8);
-  cursor: pointer;
+/* GALERÍA */
+.gallery img {
+  width: 250px;
+  margin: 10px;
+  border-radius: 10px;
   transition: 0.3s;
-  border: 2px solid white;
 }
 
-.slider:hover {
-  transform: scale(1.03);
-}
-
-.slider img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: opacity 0.5s ease-in-out;
-}
-
-.slider-instruccion {
-  display: block;
-  margin-bottom: 20px;
-  font-family: Arial;
-  font-style: italic;
-  opacity: 0.8;
+.gallery img:hover {
+  transform: scale(1.05);
 }
 
 /* VIDEO */
@@ -204,6 +148,30 @@ header::after {
   max-width: 600px;
   height: 340px;
   border-radius: 10px;
+}
+
+/* FORM */
+form {
+  max-width: 400px;
+  margin: auto;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  background: #3b82f6;
+  color: white;
+  padding: 10px;
+  border: none;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* FOOTER */
@@ -226,7 +194,6 @@ footer {
   color: white;
   border: 2px solid white;
   transition: 0.3s;
-  z-index: 1000;
 }
 
 .whatsapp:hover {
@@ -234,73 +201,12 @@ footer {
   color: black;
 }
 
-/* VENTANA EMERGENTE (MODAL) RECURSOS */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10001; 
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85); 
-  justify-content: center;
-  align-items: center;
-}
-
-.modal-content {
-  background: #111;
-  padding: 40px;
-  border: 2px solid white;
-  border-radius: 12px;
-  text-align: center;
-  max-width: 400px;
-  width: 85%;
-  position: relative;
-  animation: fadeIn 0.3s ease;
-}
-
-.close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.close-modal:hover {
-  color: #ff4d4d;
-}
-
-.recursos-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.btn-descarga {
-  padding: 15px;
-  background: transparent;
-  color: white;
-  border: 1px solid white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn-descarga:hover {
-  background: white;
-  color: black;
-}
-
 /* ANIMACIONES */
 @keyframes fadeIn {
-  to { opacity: 1; transform: scale(1.05); }
+  to {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 .fade-out {
@@ -308,12 +214,9 @@ footer {
 }
 
 @keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-@media (max-width: 768px) {
-  .slider {
-    height: 300px; 
+  to {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -324,17 +227,25 @@ footer {
 
 <!-- SPLASH -->
 <div id="splash">
-  <img src="logo-01.png" alt="Logo Ayawaska">
+  <img src="logo.png" alt="Logo Ayawaska">
 </div>
 
 <header>
-  <div class="header-center">
+  <div>
     <img src="logo-01.png" alt="Ayawaska">
     <p>Rock • Cultura • Energía en vivo</p>
+    
+    <div class="social-links" style="margin: 20px 0 30px; display: flex; justify-content: center; gap: 25px;">
+      <a href="https://www.facebook.com/AyawaskaOficial" target="_blank" style="text-decoration: none; font-size: 2rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📱</a>
+      <a href="https://www.instagram.com/ayawaska_oficial" target="_blank" style="text-decoration: none; font-size: 2rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📷</a>
+      <a href="https://www.youtube.com/@AyawaskaEcuador" target="_blank" style="text-decoration: none; font-size: 2rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">📺</a>
+      <a href="https://open.spotify.com/artist/3B1X8EhyS2Jd0yq8hKq27p" target="_blank" style="text-decoration: none; font-size: 2rem; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">🎧</a>
+    </div>
+
+    <a class="btn" href="https://wa.me/593989427123" target="_blank">
+      📲 Contratar ahora
+    </a>
   </div>
-  <a class="btn" href="https://wa.me/593989427123" target="_blank">
-    📲 Contratar ahora
-  </a>
 </header>
 
 <section class="section">
@@ -344,46 +255,22 @@ footer {
   </p>
 </section>
 
-<!-- GALERÍA ANIMADA ROTATIVA -->
 <section class="section gallery">
   <h2>Galería</h2>
-  <span class="slider-instruccion">👆 Toca la imagen para ver el álbum completo</span>
-  
-  <a href="galeria.html" class="slider">
-    <!-- Esta imagen cambiará cada vez -->
-    <img id="slider-img" src="19244085_1338686362895204_1801167_n.png" alt="Ayawaska Galería">
-  </a>
+
+  <img src="19244085_1338686362895204_1801167_n.png">
+  <img src="19244128_1338688802894960_1736599792_n.png">
+  <img src="19251290_1338686356228538_208430174_n.png">
+  <img src="19389883_1338690676228106_1191935368_n.png">
+  <img src="19398590_133869995618507_9916779185_n.png">
+  <img src="19401310_1338690896228084_181350141_o.png">
+
 </section>
 
 <section class="section video">
   <h2>Video</h2>
   <iframe src="https://www.youtube.com/embed/LX0XGf-w0Ic" allowfullscreen></iframe>
 </section>
-
-<!-- SECCIÓN BOTÓN RECURSOS -->
-<div style="text-align: center; padding: 40px 20px 80px 20px;">
-  <button id="openRecursos" class="btn" style="background: black !important; color: white !important; border-color: white !important;">
-    📂 Recursos Prensa / Promotores
-  </button>
-</div>
-
-<!-- VENTANA EMERGENTE DE RECURSOS -->
-<div id="modalRecursos" class="modal">
-  <div class="modal-content">
-    <span class="close-modal">&times;</span>
-    <h2>Recursos Descargables</h2>
-    <p style="margin-bottom: 20px;">Material oficial y requerimientos técnicos de la banda.</p>
-    
-    <div class="recursos-links">
-      <!-- Estos enlaces están ajustados EXACTAMENTE a como los tienes en GitHub -->
-      <a href="Rider Ayawaska.pdf" target="_blank" download class="btn-descarga">🎤 Descargar Rider Técnico</a>
-      <a href="Stage Plot.png" target="_blank" download class="btn-descarga">🎸 Descargar Stage Plot</a>
-      <a href="EPK.pdf" target="_blank" download class="btn-descarga">📄 Descargar EPK</a>
-      <a href="logo-01.png" target="_blank" download class="btn-descarga">🖼️ Descargar Logo Oficial PNG</a>
-      <a href="Logo vector.ai" target="_blank" download class="btn-descarga">📐 Descargar Logo Vector (.ai)</a>
-    </div>
-  </div>
-</div>
 
 <footer>
   <p>© 2026 Ayawaska</p>
@@ -394,60 +281,24 @@ footer {
 </a>
 
 <script>
-// Splash Screen
+
 window.addEventListener("load", () => {
-  setTimeout(() => document.getElementById("splash").classList.add("fade-out"), 2500);
   setTimeout(() => {
-    document.querySelectorAll('.section').forEach(sec => {
-      if(sec.getBoundingClientRect().top < window.innerHeight) sec.classList.add('visible');
-    });
-  }, 2600);
+    document.getElementById("splash").classList.add("fade-out");
+  }, 2500);
 });
 
-// Scroll Animation
+const sections = document.querySelectorAll('.section');
+
 window.addEventListener('scroll', () => {
-  document.querySelectorAll('.section').forEach(sec => {
-    if(sec.getBoundingClientRect().top < window.innerHeight - 100) sec.classList.add('visible');
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add('visible');
+    }
   });
 });
 
-// Modal Recursos
-const modal = document.getElementById("modalRecursos");
-document.getElementById("openRecursos").addEventListener("click", () => modal.style.display = "flex");
-document.querySelector(".close-modal").addEventListener("click", () => modal.style.display = "none");
-window.addEventListener("click", (e) => { if (e.target == modal) modal.style.display = "none"; });
-
-// SCRIPT PARA EL ROTADOR DE FOTOS (Incluye TODAS tus fotos subidas)
-const arrayFotos = [
-  "19244085_1338686362895204_1801167_n.png",
-  "19244128_1338688802894960_1736599792_n.png",
-  "19244420_1338686589561848_1494740831_n.jpg",
-  "19250084_1338691862894654_43773905_o.png",
-  "19251290_1338686356228538_2084330174_n.png",
-  "19389431_1338686146228559_1377203761_n.jpg",
-  "19389883_1338690676228106_1191935368_n.png",
-  "19398590_1338686999561807_991679185_n.png",
-  "19401286_1338683636228810_1194118554_o.jpg",
-  "19401310_1338690896228084_1813530141_o.png",
-  "_DSC0131.jpg",
-  "_DSC9850.jpg",
-  "_DSC9871.jpg",
-  "_DSC9895.jpg"
-];
-
-let indiceActual = 0;
-const imgRotativa = document.getElementById("slider-img");
-
-if(imgRotativa) {
-  setInterval(() => {
-    imgRotativa.style.opacity = 0; 
-    setTimeout(() => {
-      indiceActual = (indiceActual + 1) % arrayFotos.length;
-      imgRotativa.src = arrayFotos[indiceActual];
-      imgRotativa.style.opacity = 1; 
-    }, 500); 
-  }, 3500); 
-}
 </script>
 
 </body>
