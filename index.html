@@ -282,6 +282,39 @@ footer {
   border-color: #00ffc8;
 }
 
+.res-btn:hover {
+  background: white;
+  color: black;
+  border-color: #00ffc8;
+}
+
+/* CAROUSEL STYLES */
+.gallery-slideshow {
+  position: relative;
+  max-width: 600px;
+  height: 400px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.8);
+  border: 1px solid #333;
+}
+
+.gallery-slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.gallery-slideshow img.active {
+  opacity: 1;
+}
+
 </style>
 </head>
 
@@ -297,7 +330,7 @@ footer {
     <img src="logo-01.png" alt="Ayawaska">
     <p>Rock • Cultura • Energía en vivo</p>
     
-    <a class="btn" href="https://wa.me/593989427123" target="_blank">
+    <a class="btn" href="https://wa.me/593989427123" target="_blank" style="position: absolute; bottom: 50px; left: 50%; transform: translateX(-50%); margin-top: 0; white-space: nowrap;">
       📲 Contratar ahora
     </a>
   </div>
@@ -331,8 +364,8 @@ footer {
 <section class="section gallery">
   <a href="galeria.html" style="text-decoration: none; color: inherit; cursor: pointer;" title="Haga clic para ver toda la galería">
     <h2>Galería</h2>
-    <div class="gallery-container">
-      <img src="19244085_1338686362895204_1801167_n.png">
+    <div id="slider" class="gallery-slideshow">
+      <img src="19244085_1338686362895204_1801167_n.png" class="active">
       <img src="19244128_1338688802894960_1736599792_n.png">
       <img src="19251290_1338686356228538_2084330174_n.png">
       <img src="19389883_1338690676228106_1191935368_n.png">
@@ -348,8 +381,8 @@ footer {
   <iframe src="https://www.youtube.com/embed/LX0XGf-w0Ic" allowfullscreen></iframe>
 </section>
 
-<section class="section" style="padding-top: 20px;">
-  <button class="btn" id="openPrensa" style="background: rgba(255,255,255,0.05); border-color: #00ffc8; color: #00ffc8; cursor: pointer; font-size: 1.1em;">
+<section class="section" style="padding: 20px 0 60px;">
+  <button class="btn" id="openPrensa" style="background: rgba(255,255,255,0.05); border-color: #00ffc8; color: #00ffc8; cursor: pointer; font-size: 0.9em; padding: 8px 15px; opacity: 0.7;">
     🎸 Kit de Prensa y Recursos
   </button>
 </section>
@@ -372,6 +405,9 @@ footer {
     <div class="resource-list">
       <a href="Rider%20pro.pdf" download="Ayawaska_Rider_Pro.pdf" class="res-btn">
         📄 Descargar Rider Pro (PDF)
+      </a>
+      <a href="Rider%20pro.pdf" download="Ayawaska_Stage_Plot.pdf" class="res-btn">
+        🗺️ Descargar Stage Plot
       </a>
       <a href="logo-01.png" download="Ayawaska_Logo.png" class="res-btn">
         🎨 Descargar Logo Oficial
@@ -417,6 +453,18 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+// LOGICA SLIDER ROTATIVO
+const slides = document.querySelectorAll('#slider img');
+let currentSlide = 0;
+
+function nextSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide + 1) % slides.length;
+  slides[currentSlide].classList.add('active');
+}
+
+setInterval(nextSlide, 3500); // Rota cada 3.5 segundos
 
 </script>
 
